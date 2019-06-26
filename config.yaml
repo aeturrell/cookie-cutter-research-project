@@ -1,0 +1,39 @@
+# File paths
+- data:
+    rawFilePath: raw/
+    clnFilePath: cleaned/
+    outPath: output/
+    outPathScratch: output-scratch/
+
+# Structure is name, name of value, [dataset name, timeseries name]
+-  timeSeries:
+    iop:
+      - DIOP
+      - K222
+    ios:
+      - PN2
+      - L2NC
+    gdp:
+      - PN2
+      - ABMI
+    emp:
+      - LMS
+      - MGRZ
+    hhc:
+      - CT
+      - ABJQ
+
+- viz:
+    xtick.labelsize: 20
+    ytick.labelsize: 20
+    font.size: 22
+    figure.autolayout: False
+    figure.figsize: 10,5.5
+    axes.titlesize : 22
+    axes.labelsize : 20
+    lines.linewidth : 2
+    lines.markersize : 6
+    legend.fontsize: 16
+    mathtext.fontset: stix
+    font.family : STIXGeneral
+    legend.frameon : False

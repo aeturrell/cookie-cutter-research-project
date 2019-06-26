@@ -1,0 +1,120 @@
+% These slides originally from Paul Goldsmith-Pinkham: https://github.com/paulgp
+
+\include{Preamble}
+% Decimal align 
+\usepackage{dcolumn}
+\newcolumntype{d}[0]{D{.}{.}{5}}
+
+\usepackage{graphicx}
+\graphicspath{{../../output/}}
+\usepackage[]{epstopdf}
+% This adds the output directory to the inputs function (code outputs are latex inputs!) so you don't have to use a relative path each time
+\makeatletter
+\providecommand*{\input@path}{}
+\g@addto@macro\input@path{{../../output/}}% append
+\makeatother
+
+
+\usepackage[space]{grffile}
+
+ 
+\title{\textbf{\LARGE{PAPER TITLE}}\thanks{First version: DATE. This version: \today.  ACKNOWLEDGEMENTS HERE}}
+
+\author{
+	AUTHOR 1\thanks{UNIVERSITY 1. Email: \href{mailto:author@address.com}{author@address.com}} \and
+	AUTHOR 2\thanks{UNIVERSITY 2. Email: \href{mailto:author@address.com}{author@address.com}} \and 
+	AUTHOR 3\thanks{UNIVERSITY 3. Email: \href{mailto:author@address.com}{author@address.com}} \and 
+	AUTHOR 4\thanks{INSTITUTION 1. Email: \href{mailto:author@address.com}{author@address.com}} 
+	}
+			
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty} 
+\setcounter{page}{0}
+
+\begin{abstract}
+ABSTRACT HERE
+
+\end{abstract}
+
+
+	  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+\clearpage
+
+The model is:
+$$
+\begin{aligned} 
+	\vec{y}_t & = \Gamma \vec{f}_t + \vec{u}_t \\ 
+        \vec{f}_t & = A_1 \vec{f}_{t-1} + A_2\vec{f}_{t-2} + \Xi_t \quad \quad \Xi_t \thicksim \mathcal{N}(0,I)\\ 
+	 \vec{u}_t  & = B_1 \vec{u}_{t-1} + B_2\vec{u}_{t-2} + \Phi_t \quad \quad \Phi_t \thicksim \mathcal{N}(0,\Sigma)
+\end{aligned} 
+$$
+where capital Greek and Latin characters represent matrices, arrows over characters denote vectors, and it is assumed that the different components of the `innovations' in the error updating equation are uncorrelated so that $ \Sigma $ is a diagonal matrix. The model has one unobserved factor that follows an AR(2), and the errors similarly follow an AR(2).
+
+\input{DFM_model.tex}
+\begin{figure}[h]
+	\includegraphics[width=\textwidth]{fcasts.eps} 
+	\caption{Example figure. \label{fig:example}}
+\end{figure}
+
+\begin{figure}[h]
+	\includegraphics[width=\textwidth]{df_irfs.eps} 
+	\caption{Example figure. \label{fig:example}}
+\end{figure}
+
+\newpage
+\singlespacing 
+\bibliographystyle{aea}
+%\bibliography{bibliography.bib}
+
+\onehalfspacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%Figures and tables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{Figures.tex}
+%\input{Tables.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Appendices
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage  
+\appendix
+
+\renewcommand{\thefigure}{A\arabic{figure}}
+\setcounter{figure}{0}
+
+\renewcommand{\thetable}{A\arabic{table}}
+\setcounter{table}{0}
+
+
+\clearpage
+\begin{center}
+\vspace{-1.8cm}{\LARGE \textbf{PAPER TITLE}}\medskip \\
+	\Large \textbf{Online Appendix} \bigskip \\
+\large AUTHOR NAME 1 \hspace{0.3cm} AUTHOR NAME 2 \hspace{0.3cm} AUTHOR NAME 3 \hspace{0.3cm} AUTHOR NAME 4 \bigskip
+	
+\end{center}
+
+
+%\input{Appendix_text.tex}
+
+%\clearpage
+%\input{Appendix_figures.tex}
+
+%\clearpage
+%\input{Appendix_tables.tex}
+
+
+
+
+\end{document}
