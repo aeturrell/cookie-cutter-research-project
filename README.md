@@ -26,7 +26,7 @@ To re-run the analysis part of the project with conda, first install the require
 ```
 conda env create -f ccenv.yml
 ```
-You then need to activate the environment to use in your IDE. The command for this is ```conda activate ccenv```.
+You then need to activate the environment to use in your IDE. The command for this is ```conda activate ccenv```. Note that, to try to ensure compatibility with all operating systems, the environment file is simplified. It only specifies the version of Python, conda is trusted to resolve dependencies and pick the right versions of other required packages.
 
 Then run the files in this order to create the final PDF outputs:
 - download_raw_data.py
