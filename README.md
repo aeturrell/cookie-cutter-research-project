@@ -2,23 +2,24 @@
 
 This is an example, or 'cookiecutter', repository for a research project. ```git clone``` the project and use it as a skeleton for your own research project. A full explanation may be found in [this accompanying blog post](http://aeturrell.com//2019/06/26/get-organised/). The idea is that this project structure should be as simple as possible, but no simpler.
 
-
 While the example happens to be in Python, the structure of the project should be applicable to any language. The structure is sketched out below:
 ![png](cookiecutterorg.png)
 
-#### Example project details
+The project here is very much a toy example and not intended to be accurate or say anything at all about the real world!
+
+### Example Paper and slides
+
+Within the example project, there are latex templates for both slides and a working paper. These are based on [Paul Goldsmith-Pinkham](https://twitter.com/paulgp?lang=en)'s excellent templates, the originals of which you can find [here for slides](https://github.com/paulgp/beamer-tips) and [here for the working paper](https://github.com/paulgp/draft-tex). I've modified both, for example to ensure that the latex paper appendix uses within-section labels for figures and tables.
+
+I've also added guidance on paper writing directly to the latex template. It's taken from various posts on the subject.
+
+### Example Code
 
 The code is in Python 3 and uses the ONS API to download some macroeconomic time series, process them into tidy data, and then use them within a dynamic factor model&dagger; inspired by [Chad Fulton](http://www.chadfulton.com/)'s tutorials/notebooks which you can find [here](http://www.chadfulton.com/fulton_statsmodels_2017/sections/6-out-of-the-box_models.html#dynamic-factors) and [here](https://www.statsmodels.org/dev/examples/notebooks/generated/statespace_dfm_coincident.html).
 
-The project here is very much a toy example and not intended to be accurate or say anything at all about the real world!
-
 Note that paths, the series to download, and visualisation settings are all defined in config.yaml. The data processing steps are separated: raw data to file first, then cleaned data into tidy format in a csv, and finally the time series are used in a statistical model. The plots are similarly just examples.
 
-Within the example project, there are latex templates for both slides and a working paper. These are based on [Paul Goldsmith-Pinkham](https://twitter.com/paulgp?lang=en)'s excellent templates, the originals of which you can find [here for slides](https://github.com/paulgp/beamer-tips) and [here for the working paper](https://github.com/paulgp/draft-tex).
-
 More on the example dynamic factor model found in ```analysis.py``` in the blog post.
-
-where capital Greek and Latin characters represent matrices, arrows over characters denote vectors, and it is assumed that the different components of the `innovations' in the error updating equation are uncorrelated so that $ \Sigma $ is a diagonal matrix. The model has one unobserved factor that follows an AR(2), and the errors similarly follow an AR(2).
 
 #### Re-running the example project
 
