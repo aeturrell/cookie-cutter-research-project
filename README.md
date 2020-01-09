@@ -35,6 +35,12 @@ Then run the files in this order to create the final PDF outputs:
 - analysis.py
 - both Latex files*
 
+There are a couple of ways to run the python files. The first is to run them from the command line, from the root directory. For example:
+``python -m src.download_raw_data``
+To run all of them at once, use 
+``python -m src.master``
+Or, from within an IDE, run the contents of src/master.py (but run it as if from the root folder).
+
 
 &ast; You may find that because the .eps files used for figures are not in a sub-directory of the main .tex folder, you must add a flag to the Latex compiler. In TexShop, the steps are:
 - Go to Preferences

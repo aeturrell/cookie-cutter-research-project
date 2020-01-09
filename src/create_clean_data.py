@@ -6,7 +6,8 @@ all together
 """
 import os
 import pandas as pd
-import yaml
+import json
+import src.utilities as utils
 
 
 def clean_ons_time_series(key, dataset_id, timeseries_id):
@@ -14,6 +15,7 @@ def clean_ons_time_series(key, dataset_id, timeseries_id):
     Opens raw data (in json) as downloaded from ONS API
     and puts it into a clean monthly and tidy format.
     """
+    config = utils.read_config()
     raw_file_name = os.path.join(config['data']['rawFilePath'],
                                  key+'_data.txt')
     with open(raw_file_name) as json_file:
@@ -44,13 +46,24 @@ def clean_ons_time_series(key, dataset_id, timeseries_id):
     df['value_name'] = key
     return df
 
-# Get config file
-config = {k: v for d in yaml.load(open('config.yaml')) for k, v in d.items()}
-# Create empty list for vector of dataframes
-df_vec = []
-for key in list(config['timeSeries'].keys()):
-    df_vec.append(clean_ons_time_series(key, *config['timeSeries'][key]))
-# Put this into tidy format
-df = pd.concat(df_vec, axis=0)
-# Write it to clean data
-df.to_csv(os.path.join(config['data']['clnFilePath'], 'ts_data.csv'))
+
+def create_clean_data():
+    """
+    Master function which takes all raw series, cleans them,
+    and outputs to a flat file
+    """
+    # Get config file
+    config = utils.read_config()
+    # Create empty list for vector of dataframes
+    df_vec = []
+    for key in list(config['timeSeries'].keys()):
+        df_vec.append(clean_ons_time_series(key, *config['timeSeries'][key]))
+    # Put this into tidy format
+    df = pd.concat(df_vec, axis=0)
+    # Write it to clean data
+    df.to_csv(os.path.join(config['data']['clnFilePath'], 'ts_data.csv'))
+
+
+if __name__ == "__main__":
+    # Master function
+    create_clean_data()
