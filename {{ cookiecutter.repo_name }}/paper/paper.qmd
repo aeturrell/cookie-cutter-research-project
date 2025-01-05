@@ -99,7 +99,7 @@ $$
 
 Uncomment the below to get a figure included.
 
-<!-- ![Monthly and weekly seasonal effects as estimated in the preferred specification.](../outputs/figure_name.pdf){#fig-seasonality} -->
+<!-- ![Monthly and weekly seasonal effects as estimated in the preferred specification.](../outputs/figure_name.pdf){% raw %}{#fig-seasonality} -->{% endraw %}
 
 To give a sense of the strength of these seasonal influences, @fig-seasonality shows the day-of-the-week and month-of-the-year effects.
 
