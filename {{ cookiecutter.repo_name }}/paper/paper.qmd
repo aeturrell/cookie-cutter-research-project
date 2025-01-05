@@ -20,7 +20,7 @@ format:
           \usepackage{amsthm}
   arxiv-html: default
 author:
-  - name: "{{ cookiecutter.author }}"
+  - name: "{{ cookiecutter.author_name }}"
     affiliations:
       - name: "{{ cookiecutter.affiliation }}"
         # department: Financial Stability and  # other fields
