@@ -45,7 +45,7 @@ jupyter: python3
 
 {% raw %}{{< pagebreak >}}{% endraw %}
 
-# Introduction {#sec-intro}
+# Introduction
 
 ```{python}
 # People won't see this code
