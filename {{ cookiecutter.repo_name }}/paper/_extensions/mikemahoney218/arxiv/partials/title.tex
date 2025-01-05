@@ -1,3 +1,4 @@
+{% raw %}
 $-- Provides configuration of document metadata for writing the title block.
 $-- Note that in addition to these templates and partials, Quarto will also make normalized authors and affiliations data available to the template,
 $-- making is easy to write custom title blocks against a standard schema.
@@ -38,3 +39,4 @@ $if(authorcols)$
 $endif$
 \author{${ by-author:_authors.tex()[\asep] }}
 \date{$date$}
+{% endraw %}

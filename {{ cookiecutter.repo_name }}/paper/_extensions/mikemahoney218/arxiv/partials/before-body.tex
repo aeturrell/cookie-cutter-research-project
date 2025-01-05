@@ -1,3 +1,4 @@
+{% raw %}
 $-- Implements the frontmatter, title page, and abstract.
 $--
 $-- %%%% TODO %%%%%
@@ -25,3 +26,4 @@ $for(keywords/allbutlast)$$keywords$ \sep $endfor$
 $for(keywords/last)$$keywords$$endfor$
 
 $endif$
+{% endraw %}
