@@ -1,0 +1,138 @@
+---
+title: "{{cookiercutter.paper_name}}"
+format:
+  arxiv-pdf:
+    keep-tex: true
+    linenumbers: false
+    doublespacing: false
+    runninghead: ""
+    fig-pos: H
+    include-in-header:
+      - text: |
+          \usepackage[utf8]{inputenc}
+          \usepackage{fontspec}
+          \usepackage{booktabs}
+          \usepackage{makecell}
+          \usepackage{threeparttable}
+          \usepackage{amsfonts}
+          \usepackage{amssymb}
+          \usepackage{amsmath}
+          \usepackage{amsthm}
+  arxiv-html: default
+author:
+  - name: "{{ cookiecutter.full_name }}"
+    affiliations:
+      - name: "{{ cookiecutter.affiliation }}"
+        # department: Financial Stability and  # other fields
+        # address: 1 Forestry Drive
+        # city: Syracuse, NY
+        # country: USA
+        # postal-code: 13210
+    orcid: "{{ cookiecutter.orcid }}"
+abstract: |
+  Abstract goes here.
+keywords:
+  - cookies
+  - wikipedia
+  - skydiving
+bibliography: ../references/references.bib
+csl: ../references/chicago-author-date.csl
+link-citations: true
+execute:
+  echo: false
+jupyter: python3
+---
+
+{{< pagebreak >}}
+
+# Introduction {#sec-intro}
+
+```{python}
+# People won't see this code
+from pathlib import Path
+import tomli
+import pandas as pd
+
+seconds_in_an_hour = 60*60
+```
+
+Time is our most valuable and exhaustable resource: once the `{python} seconds_in_an_hour` seconds of any hour have passed, we may never go back and re-live them (much as we may sometimes wish to.)
+
+The closest paper to ours is @kalamara2022making ... Multiple citations work too [@abraham_explaining_2020;@ren_how_2024] and they can be in line or not [@ren_how_2024].
+
+We make three contributions relative to the existing literature. First, we provide the first evidence that the provision of public goods in leisure time can be influenced, and reduced, by the release of enticing media products—directly showing how trade-offs in time use play out. Because of our controls, there is a good argument that this relationship is causal. Second, we show that the percent size of the reduction in edits is linearly proportional to the level of critical acclaim, as predicted by theory. Third, we demonstrate the value of naturally occurring data, in this case on video game releases and Wikipedia edits, in revealing how our attention can be drawn to the latest, shiniest media product.
+
+As robustness checks on our results, we run regressions with placebo games release dates, and we run a specification curve analysis with two important parameters that affect the assembly of the dataset: the threshold for what is 'critically acclaimed' and the size of the post-release window (in days) in which attention is drawn away. The placebo regresion shows a much smaller effect with less statistical significance and the specification curve analysis shows that estimates of the effect are consistent across both of the varied dimensions.
+
+# Data
+
+Analysis is performed on the period of overlap between these two datasets. Aggregate summary statistics for this period are shown in @tbl-one.
+
+To include latex tables, just enclose `python` in the below with curly brackets.
+
+```python
+#| label: tbl-one
+#| tbl-cap: Summary statistics
+#| output: asis
+#| echo: false
+#| tbl-pos: H
+
+with open(Path("../outputs/table_one.tex"), "r") as f:
+    tab_one = f.read()
+
+print(tab_one)
+```
+
+# Theoretical model
+
+Here we outline a theoretical model to show how mathematics works.
+
+We assume that each person faces choices between whether to consume a numeraire good, $c$, or spend time on a finite number of leisure activities $h_i$ with $i = 1, \ldots, I$. We assume weak separability between consumption and leisure so that the utility a person gets from combinations of leisure and consumption can be expressed as $U(c, \tilde{v}(h_1, \ldots, h_I; \vec{\theta}))$. $\tilde{v}$ is an aggregator over leisure activities and $\vec{\theta} = \{\theta_1, \ldots, \theta_I \}$ is a vector of **quality levels** of the leisure activities.
+
+We assume that leisure is aggregated with the following functional form
+$$
+\tilde{v}(\vec{h}; \vec{\theta}) = \displaystyle\sum_{i=0}^{I} \frac{\left(\theta_i h_i\right)^{1-\frac{1}{\eta_i}}}{1-\frac{1}{\eta_i}}
+$$
+
+
+## Seasonality and holidays {#sec-seasonal}
+
+Uncomment the below to get a figure included.
+
+<!-- ![Monthly and weekly seasonal effects as estimated in the preferred specification.](../outputs/figure_name.pdf){#fig-seasonality} -->
+
+To give a sense of the strength of these seasonal influences, @fig-seasonality shows the day-of-the-week and month-of-the-year effects.
+
+## News {#sec-news}
+
+It is easy to refere back to other sections (see @sec-seasonal). 
+{{< pagebreak >}}
+
+# Appendix {.unnumbered}
+
+## Software {.unnumbered}
+
+This paper was prepared using Quarto and Python {{ cookiecutter.python_version_number }} The packages used are shown in @tbl-pkg.
+
+```{python}
+#| label: tbl-pkg
+#| tbl-cap: Packages used in this paper.
+#| output: asis
+#| echo: false
+#| tbl-pos: h
+
+
+with open(Path("../pyproject.toml"), "rb") as f:
+    packages_toml = tomli.load(f)
+
+pkg_df = pd.DataFrame(packages_toml["project"]["dependencies"])
+pkg_df = pkg_df[0].str.split(">=", expand=True)
+pkg_df = pkg_df.rename(columns={0: "Python package name", 1: "Version"})
+pkg_df = pkg_df.set_index("Python package name")
+pkg_df
+```
+
+# References {.unnumbered}
+
+::: {#refs}
+:::

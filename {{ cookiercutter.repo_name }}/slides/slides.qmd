@@ -1,0 +1,81 @@
+---
+title: "{{cookiercutter.paper_name}}"
+subtitle: "{{cookiercutter.paper_subtitle}}"
+format: 
+  clean-revealjs:
+    self-contained: true
+    incremental: true
+    monofont: 'Monaspace Neon'
+    # logo: "images/smith_lovelace.png"  # adds logo to slides
+    slide-number: false
+    output-file: "{{cookiercutter.paper_name}}_slides.html"
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: "{{ cookiecutter.full_name }}"
+    orcid: "{{ cookiecutter.orcid }}"
+    # email:
+    affiliations:
+      - name: "{{ cookiecutter.affiliation }}"
+date: today
+bibliography: ../references/references.bib
+csl: ../references/chicago-author-date.csl
+execute:
+  echo: true
+jupyter: python3
+# title-slide-attributes:  # adds image to title slide
+#   data-background-image: "images/smith_lovelace.png"
+#   data-background-size: 35%
+#   data-background-position: 80% 50%
+---
+
+# Introduction {background-color="#bb80bc" transition="fade-out"}
+
+## What's this all about {transition="fade-in slide-out"}
+
+- This is about cookies
+
+
+# Motivation {background-color="#40666e" transition="fade-in fade-out"}
+
+## Columns are great
+### See what I mean {.nostretch}
+
+:::: {.columns}
+::: {.column}
+::: {.fragment}
+You can have
+:::
+::: {.fragment}
+columns that appear
+:::
+:::
+
+::: {.column}
+::: {.fragment}
+one by...
+:::
+::: {.fragment}
+one
+:::
+:::
+::::
+
+## What code can do
+
+Uncomment the below to include a figure.
+<!-- ![This is a figure caption](../outputs/figure.pdf) -->
+
+# Basics of Coding {background-color="#40666e" transition="fade-in fade-out"}
+
+## Python as a calculator
+
+::: {.fragment}
+You can use Python as a calculator:
+```{python}
+print(1 / 200 * 30)
+print((59 + 73 + 2) / 3)
+# This is a code comment and doesn't get executed
+```
+:::
