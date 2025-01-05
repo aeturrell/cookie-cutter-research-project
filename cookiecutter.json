@@ -1,5 +1,12 @@
 {
     "project_name": "Cookiecutter Example Research Project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
-    "author": "Anonymous"
+    "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+    "paper_name": "paper",
+    "paper_subtitle": "paper_subtitle",
+    "author_name": "Anonymous",
+    "python_version_number": "3.10.0",
+    "description": "An example research project",
+    "affiliation": "University",
+    "orcid": "0000-0000-0000-0000"
   }

@@ -1,5 +1,5 @@
 [project]
-name = "{{ cookiecutter.module_name|tojson }}'
+name = "{{ cookiecutter.repo_name|tojson }}'
 version = "0.0.1"
 description = "{{ cookiecutter.description|tojson }}"
 readme = "README.md"
