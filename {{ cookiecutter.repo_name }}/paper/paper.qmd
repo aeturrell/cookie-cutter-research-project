@@ -106,7 +106,7 @@ To give a sense of the strength of these seasonal influences, @fig-seasonality s
 ## News {% raw %}{#sec-news}{% endraw %}
 
 It is easy to refere back to other sections (see @sec-seasonal). 
-{{< pagebreak >}}
+{% raw %}{{< pagebreak >}}{% endraw %}
 
 # Appendix {.unnumbered}
 
@@ -134,5 +134,5 @@ pkg_df
 
 # References {.unnumbered}
 
-::: {#refs}
+::: {% raw %}{#refs}{% endraw %}
 :::
