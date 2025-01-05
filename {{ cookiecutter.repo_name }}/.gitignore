@@ -10,7 +10,7 @@ paper/*.log
 paper/paper_files/**
 
 # Exclude everything in these directories
-slides/{{cookiercutter.paper_name}}_slides.html
+slides/{{cookiecutter.paper_name}}_slides.html
 slides/slides_files/*
 
 logs/*/*
@@ -19,7 +19,7 @@ logs/*/*
 data/*/*
 !data/*/.gitkeep
 
-outputs*
+outputs/*
 !outputs/.gitkeep
 
 models/*

@@ -1,6 +1,6 @@
 ---
-title: "{{cookiercutter.paper_name}}"
-subtitle: "{{cookiercutter.paper_subtitle}}"
+title: "{{cookiecutter.paper_name}}"
+subtitle: "{{cookiecutter.paper_subtitle}}"
 format: 
   clean-revealjs:
     self-contained: true
@@ -8,7 +8,7 @@ format:
     monofont: 'Monaspace Neon'
     # logo: "images/smith_lovelace.png"  # adds logo to slides
     slide-number: false
-    output-file: "{{cookiercutter.paper_name}}_slides.html"
+    output-file: "{{cookiecutter.paper_name}}_slides.html"
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"

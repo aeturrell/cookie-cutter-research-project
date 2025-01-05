@@ -1,5 +1,5 @@
 ---
-title: "{{cookiercutter.paper_name}}"
+title: "{{cookiecutter.paper_name}}"
 format:
   arxiv-pdf:
     keep-tex: true
