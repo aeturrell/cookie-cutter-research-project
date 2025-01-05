@@ -43,7 +43,7 @@ execute:
 jupyter: python3
 ---
 
-{{< pagebreak >}}
+{% raw %}{{< pagebreak >}}{% endraw %}
 
 # Introduction {#sec-intro}
 
