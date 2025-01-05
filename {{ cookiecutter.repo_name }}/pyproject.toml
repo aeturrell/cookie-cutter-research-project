@@ -1,10 +1,10 @@
 [project]
-name = "{{ cookiecutter.repo_name|tojson }}"
+name = {{ cookiecutter.repo_name|tojson }}
 version = "0.0.1"
-description = "{{ cookiecutter.description|tojson }}"
+description = {{ cookiecutter.description|tojson }}
 readme = "README.md"
 authors = [
-  { name = "{{ cookiecutter.author_name|tojson }}" },
+  { name = {{ cookiecutter.author_name|tojson }} },
 ]
 license = {text = "MIT License"}
 classifiers = [
