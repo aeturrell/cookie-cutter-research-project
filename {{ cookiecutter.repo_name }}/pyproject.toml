@@ -20,6 +20,8 @@ dependencies = [
     "ruff>=0.8.4",
     "toml>=0.10.2",
     "loguru>=0.7.2",
+    "nbclient>=0.10.2",
+    "pandas>=2.2.3",
 ]
 
 [build-system]
