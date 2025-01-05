@@ -1,0 +1,14 @@
+[viz]
+"xtick.labelsize" = 20
+"ytick.labelsize" = 20
+"font.size" = 20
+"figure.autolayout" = false
+"figure.figsize" = "10,5.5"
+"axes.titlesize" = 22
+"axes.labelsize" = 20
+"lines.linewidth" = 2
+"lines.markersize" = 6
+"legend.fontsize" = 16
+"mathtext.fontset" = "stix"
+"font.family" = "STIXGeneral"
+"legend.frameon" = false
