@@ -1,4 +1,8 @@
-# Cookie cutter to create research projects
+# Cookiecutter Research Project
+
+A template for a modern, fully featured and efficient research project.
+
+![cookiecutter research project logo](cookiecutter_logo.svg)
 
 ## Setup
 
